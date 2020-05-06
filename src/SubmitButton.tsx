@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     item: {
         [theme.breakpoints.down('xs')]: {
-            padding: theme.spacing(1, 0, 1), //TXL
+            padding: theme.spacing(2, 0, 1), //TXL
         },
         [theme.breakpoints.up('sm')]: {
             padding: theme.spacing(2, 0, 1, 1), //TRBL
