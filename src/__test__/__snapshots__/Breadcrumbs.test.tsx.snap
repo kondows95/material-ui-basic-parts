@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Basic Usage Snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root MuiBox-root-170"
+  >
+    <nav
+      aria-label="breadcrumb"
+      class="MuiTypography-root MuiBreadcrumbs-root MuiTypography-body1 MuiTypography-colorTextSecondary"
+    >
+      <ol
+        class="MuiBreadcrumbs-ol"
+      >
+        <li
+          class="MuiBreadcrumbs-li"
+        >
+          <a
+            class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorInherit"
+            data-testid="breadcrumb0"
+          >
+            <div
+              class="MuiBox-root MuiBox-root-211"
+            >
+              HOME
+            </div>
+          </a>
+        </li>
+        <li
+          aria-hidden="true"
+          class="MuiBreadcrumbs-separator"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+            />
+          </svg>
+        </li>
+        <li
+          class="MuiBreadcrumbs-li"
+        >
+          <a
+            class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorInherit"
+            data-testid="breadcrumb1"
+          >
+            <div
+              class="MuiBox-root MuiBox-root-221"
+            >
+              CATEGORY1
+            </div>
+          </a>
+        </li>
+        <li
+          aria-hidden="true"
+          class="MuiBreadcrumbs-separator"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+            />
+          </svg>
+        </li>
+        <li
+          class="MuiBreadcrumbs-li"
+        >
+          <div
+            class="MuiBox-root MuiBox-root-222"
+            data-testid="breadcrumb2"
+          >
+            ARTICLE1
+          </div>
+        </li>
+      </ol>
+    </nav>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Expansion Usage Snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root MuiBox-root-278"
+  >
+    <nav
+      aria-label="breadcrumb"
+      class="MuiTypography-root MuiBreadcrumbs-root MuiTypography-body1 MuiTypography-colorTextSecondary"
+    >
+      <ol
+        class="MuiBreadcrumbs-ol"
+      >
+        <li
+          class="MuiBreadcrumbs-li"
+        >
+          <a
+            class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorInherit"
+            data-testid="breadcrumb0"
+          >
+            <div
+              class="MuiBox-root MuiBox-root-319"
+            >
+              home
+            </div>
+          </a>
+        </li>
+        <li
+          aria-hidden="true"
+          class="MuiBreadcrumbs-separator"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+            />
+          </svg>
+        </li>
+        <li
+          class="MuiBreadcrumbs-li"
+        >
+          <a
+            class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorInherit"
+            data-testid="breadcrumb1"
+          >
+            <div
+              class="MuiBox-root MuiBox-root-329"
+            >
+              category1
+            </div>
+          </a>
+        </li>
+        <li
+          aria-hidden="true"
+          class="MuiBreadcrumbs-separator"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+            />
+          </svg>
+        </li>
+        <li
+          class="MuiBreadcrumbs-li"
+        >
+          <div
+            class="MuiBox-root MuiBox-root-330"
+            data-testid="breadcrumb2"
+          >
+            article1
+          </div>
+        </li>
+      </ol>
+    </nav>
+  </div>
+</DocumentFragment>
+`;
