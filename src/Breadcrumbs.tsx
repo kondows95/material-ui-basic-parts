@@ -25,7 +25,7 @@ const MyBreadcrumbs: React.FC<Props> = (props) => {
     };
 
     const MyBox = (props: BoxProps): React.ReactElement => (
-        <Box width={600} fontSize={fontSize} {...props}>
+        <Box fontSize={fontSize} {...props}>
             {props.children}
         </Box>
     );

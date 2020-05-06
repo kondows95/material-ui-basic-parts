@@ -9,8 +9,8 @@ Also, you need to install the dependent packages.
 ```
 $ yarn add @material-ui/core @material-ui/icons
 $ yarn add react-intl
-$ yarn add react react-dom react-router-dom
-$ yarn add @types/react @types/react-dom @types/react-router-dom
+$ yarn add react-router-dom @types/react-router-dom
+$ yarn add react react-dom @types/react @types/react-dom 
 ```
 
 # Usage
