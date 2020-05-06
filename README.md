@@ -14,5 +14,5 @@ $ yarn add @types/react @types/react-dom @types/react-router-dom
 ```
 
 # Usage
-See "Basic Usage" in test.tsx.
-https://github.com/kondows95/material-ui-basic-parts/tree/master/src/__test__
+See "Basic Usage" in test.tsx.<br />
+https://github.com/kondows95/material-ui-basic-parts/tree/master/src/__test__/
