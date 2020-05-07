@@ -13,10 +13,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     item: {
         [theme.breakpoints.down('xs')]: {
-            padding: theme.spacing(2, 0, 1), //TXL
+            padding: theme.spacing(2, 0, 1), //TXB
         },
         [theme.breakpoints.up('sm')]: {
-            padding: theme.spacing(2, 0, 1, 1), //TRBL
+            padding: theme.spacing(1, 0, 1, 1), //TRBL
         },
     },
 }));
@@ -34,7 +34,7 @@ const SubmitButton: React.FC<PropsWithChildren<Props>> = (props) => {
     const loading = props.loading ? true : false;
     const myProp: Props = {};
     for (const key of Object.keys(props)) {
-        if (key != 'loading') {
+        if (key !== 'loading') {
             myProp[key] = props[key];
         }
     }

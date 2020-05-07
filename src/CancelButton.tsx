@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme: Theme) => ({
             padding: theme.spacing(2, 0, 1), //TXB
         },
         [theme.breakpoints.up('sm')]: {
-            padding: theme.spacing(2, 1, 1, 0), //TRBL
+            padding: theme.spacing(1, 1, 1, 0), //TRBL
         },
     },
 }));
