@@ -1,24 +1,13 @@
-import React, { PropsWithChildren } from 'react';
-import { Box, Button, Dialog, DialogActions, DialogTitle, Theme } from '@material-ui/core';
+import React from 'react';
+import { Box, Dialog, DialogActions, DialogTitle, Theme } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { useIntl } from 'react-intl';
+import { getButtonLoadingStyle, getConfirmDialogStyle } from './styles';
+import MyButton from './MyButton';
 
 const useStyles = makeStyles((theme: Theme) => ({
-    progress: {
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        marginTop: -9,
-        marginLeft: -12,
-    },
-    item: {
-        [theme.breakpoints.down('xs')]: {
-            padding: theme.spacing(1, 0, 1), //TXL
-        },
-        [theme.breakpoints.up('sm')]: {
-            padding: theme.spacing(2, 0, 1, 1), //TRBL
-        },
-    },
+    progress: getButtonLoadingStyle(),
+    dialog: getConfirmDialogStyle(theme),
 }));
 
 interface Props {
@@ -27,12 +16,12 @@ interface Props {
     onClose: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
-const ConfirmDialog: React.FC<PropsWithChildren<Props>> = (props) => {
+const ConfirmDialog: React.FC<Props> = (props) => {
     const classes = useStyles();
     const { formatMessage } = useIntl();
 
     return (
-        <Box className={classes.item}>
+        <Box className={classes.dialog}>
             <Dialog
                 open={props.open}
                 onClose={props.onClose}
@@ -43,12 +32,19 @@ const ConfirmDialog: React.FC<PropsWithChildren<Props>> = (props) => {
                     {formatMessage({ id: 'MUIBP.confirmDialogMessage', defaultMessage: 'Are you sure?' })}
                 </DialogTitle>
                 <DialogActions>
-                    <Button onClick={props.onClose} data-testid="confirm-cancel" color="primary">
-                        {formatMessage({ id: 'MUIBP.cancel', defaultMessage: 'Cancel' })}
-                    </Button>
-                    <Button onClick={props.onConfirmed} data-testid="confirm-ok" color="primary" autoFocus>
-                        {formatMessage({ id: 'MUIBP.ok', defaultMessage: 'OK' })}
-                    </Button>
+                    <MyButton
+                        label={formatMessage({ id: 'MUIBP.cancel', defaultMessage: 'Cancel' })}
+                        onClick={props.onClose}
+                        data-testid="confirm-cancel"
+                        color="primary"
+                    />
+                    <MyButton
+                        label={formatMessage({ id: 'MUIBP.ok', defaultMessage: 'OK' })}
+                        onClick={props.onConfirmed}
+                        data-testid="confirm-ok"
+                        color="primary"
+                        autoFocus
+                    />
                 </DialogActions>
             </Dialog>
         </Box>

@@ -7,15 +7,9 @@ const react_1 = __importDefault(require("react"));
 const core_1 = require("@material-ui/core");
 const styles_1 = require("@material-ui/core/styles");
 const react_intl_1 = require("react-intl");
+const styles_2 = require("./styles");
 const useStyles = styles_1.makeStyles((theme) => ({
-    item: {
-        [theme.breakpoints.down('xs')]: {
-            padding: theme.spacing(2, 0, 1),
-        },
-        [theme.breakpoints.up('sm')]: {
-            padding: theme.spacing(2, 1, 1, 0),
-        },
-    },
+    item: styles_2.getLeftButtonStyle(theme),
 }));
 const CancelButton = (props) => {
     const classes = useStyles();

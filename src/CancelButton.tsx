@@ -2,16 +2,10 @@ import React from 'react';
 import { Button, Box, Theme } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { useIntl } from 'react-intl';
+import { getLeftButtonStyle } from './styles';
 
 const useStyles = makeStyles((theme: Theme) => ({
-    item: {
-        [theme.breakpoints.down('xs')]: {
-            padding: theme.spacing(2, 0, 1), //TXB
-        },
-        [theme.breakpoints.up('sm')]: {
-            padding: theme.spacing(1, 1, 1, 0), //TRBL
-        },
-    },
+    item: getLeftButtonStyle(theme),
 }));
 
 interface Props {
