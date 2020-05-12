@@ -43,7 +43,7 @@ const MyButton: React.FC<Props> = (props) => {
     }
 
     return (
-        <Button {...copyProps} disabled={loading} variant="contained" color="primary" fullWidth>
+        <Button {...copyProps} disabled={loading} variant="contained" fullWidth>
             {icon}
             {props.label}
             {progress}

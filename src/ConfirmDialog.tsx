@@ -36,7 +36,6 @@ const ConfirmDialog: React.FC<Props> = (props) => {
                         label={formatMessage({ id: 'MUIBP.cancel', defaultMessage: 'Cancel' })}
                         onClick={props.onClose}
                         data-testid="confirm-cancel"
-                        color="primary"
                     />
                     <MyButton
                         label={formatMessage({ id: 'MUIBP.ok', defaultMessage: 'OK' })}

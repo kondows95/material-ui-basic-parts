@@ -3,7 +3,7 @@
 exports[`Basic Usage Snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="MuiBox-root MuiBox-root-138 makeStyles-item-136"
+    class="MuiBox-root MuiBox-root-141 makeStyles-item-139"
   >
     <button
       class="MuiButtonBase-root MuiButton-root MuiButton-contained MyClass MuiButton-fullWidth"
@@ -27,7 +27,7 @@ exports[`Basic Usage Snapshot 1`] = `
 exports[`Expansion Usage Snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="MuiBox-root MuiBox-root-228 makeStyles-item-226"
+    class="MuiBox-root MuiBox-root-233 makeStyles-item-231"
   >
     <button
       class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-fullWidth"

@@ -3,7 +3,7 @@
 exports[`Basic Usage Snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="MuiBox-root MuiBox-root-148 makeStyles-item-146"
+    class="MuiBox-root MuiBox-root-151 makeStyles-item-149"
   >
     <button
       class="MuiButtonBase-root MuiButton-root MuiButton-contained MyClass MuiButton-containedPrimary Mui-disabled MuiButton-fullWidth Mui-disabled"
@@ -17,7 +17,7 @@ exports[`Basic Usage Snapshot 1`] = `
       >
         MyLabel
         <div
-          class="MuiCircularProgress-root makeStyles-progress-145 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
+          class="MuiCircularProgress-root makeStyles-progress-152 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
           role="progressbar"
           style="width: 20px; height: 20px;"
         >
@@ -44,7 +44,7 @@ exports[`Basic Usage Snapshot 1`] = `
 exports[`Expansion Usage Snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="MuiBox-root MuiBox-root-288 makeStyles-item-286"
+    class="MuiBox-root MuiBox-root-294 makeStyles-item-292"
   >
     <button
       class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-fullWidth"

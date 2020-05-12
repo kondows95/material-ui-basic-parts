@@ -9,5 +9,14 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "declaration": true
-  }
+  },
+  "include": [
+    "src/**/*",
+  ],
+  "exclude": [
+    "node_modules/*",
+    "./node_modules/*",
+    "build",
+    "./*.d.ts"
+  ]
 }
