@@ -8,7 +8,7 @@ describe('Basic Usage', () => {
         tLib = new TestLib(
             (
                 <MyPaper>
-                    <div>MyChiled</div>
+                    <div>MyChild</div>
                 </MyPaper>
             )
         );
