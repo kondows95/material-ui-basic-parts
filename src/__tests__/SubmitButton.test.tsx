@@ -1,7 +1,7 @@
 import React from 'react';
 import TestLib from 'react-testing-library-wrapper';
 import { IntlProvider } from 'react-intl';
-import SubmitButton from '../SubmitButton';
+import SubmitButton from '../lib/SubmitButton';
 
 let tLib: TestLib;
 

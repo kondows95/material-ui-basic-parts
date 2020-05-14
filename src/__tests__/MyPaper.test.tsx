@@ -1,6 +1,6 @@
 import React from 'react';
 import TestLib from 'react-testing-library-wrapper';
-import MyPaper from '../MyPaper';
+import MyPaper from '../lib/MyPaper';
 
 describe('Basic Usage', () => {
     let tLib: TestLib;

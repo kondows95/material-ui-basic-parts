@@ -2,7 +2,7 @@ import React from 'react';
 import TestLib from 'react-testing-library-wrapper';
 import { IntlProvider } from 'react-intl';
 import { BrowserRouter } from 'react-router-dom';
-import Breadcrumbs from '../Breadcrumbs';
+import Breadcrumbs from '../lib/Breadcrumbs';
 
 let tLib: TestLib;
 

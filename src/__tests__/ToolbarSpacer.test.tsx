@@ -1,6 +1,6 @@
 import React from 'react';
 import TestLib from 'react-testing-library-wrapper';
-import ToolbarSpacer from '../ToolbarSpacer';
+import ToolbarSpacer from '../lib/ToolbarSpacer';
 
 describe('Basic Usage', () => {
     let tLib: TestLib;

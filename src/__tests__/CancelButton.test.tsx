@@ -1,7 +1,7 @@
 import React from 'react';
 import TestLib from 'react-testing-library-wrapper';
 import { IntlProvider } from 'react-intl';
-import CancelButton from '../CancelButton';
+import CancelButton from '../lib/CancelButton';
 
 let tLib: TestLib;
 let onClick: jest.Mock;
