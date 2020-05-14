@@ -10,9 +10,26 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
 }));
 
-const MyPaper: React.FC<PropsWithChildren<{}>> = (props) => {
+type Props = {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    [key: string]: any;
+};
+
+const MyPaper: React.FC<PropsWithChildren<Props>> = (props) => {
     const classes = useStyles();
-    return <Paper className={classes.paper}>{props.children}</Paper>;
+
+    const copyProps: Props = {};
+    for (const key of Object.keys(props)) {
+        if (key != 'children') {
+            copyProps[key] = props[key];
+        }
+    }
+
+    return (
+        <Paper {...copyProps} className={classes.paper}>
+            {props.children}
+        </Paper>
+    );
 };
 
 export default MyPaper;

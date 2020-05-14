@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { IntlProvider } from 'react-intl';
 import { BrowserRouter } from 'react-router-dom';
 import { Breadcrumbs, CancelButton, ConfirmDialog, MyButton, MyPaper, SubmitButton, ToolbarSpacer } from './lib/index';
+import { OpenInNew as OpenInNewIcon } from '@material-ui/icons';
 
 const msgs = {
     'MUIBP.ok': 'MyOK',
@@ -30,7 +31,12 @@ function App(): React.ReactElement {
             <CancelButton />
             <SubmitButton loading={openDialog} />
             <MyPaper>MyPaper</MyPaper>
-            <MyButton label="Open Dialog" loading={openDialog} onClick={(): void => setOpenDialog(true)} />
+            <MyButton
+                icon={<OpenInNewIcon />}
+                label="Open Dialog"
+                loading={openDialog}
+                onClick={(): void => setOpenDialog(true)}
+            />
             <ConfirmDialog open={openDialog} onConfirmed={handleClose} onClose={handleClose} />
         </IntlProvider>
     );

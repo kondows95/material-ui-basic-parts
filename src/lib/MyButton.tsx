@@ -39,7 +39,11 @@ const MyButton: React.FC<Props> = (props) => {
 
     let icon = null;
     if (props.icon) {
-        icon = <Box ml={1}>{props.icon}</Box>;
+        icon = (
+            <Box display="flex" alignItems="center" justifyContent="center" mr={1}>
+                {props.icon}
+            </Box>
+        );
     }
 
     return (
