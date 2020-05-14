@@ -15,7 +15,7 @@ describe('Basic Usage', () => {
     });
 
     it('You can add chiled component', () => {
-        expect(tLib.render.container.textContent).toBe('MyChiled');
+        expect(tLib.render.container.textContent).toBe('MyChild');
     });
 
     it('Snapshot', () => {

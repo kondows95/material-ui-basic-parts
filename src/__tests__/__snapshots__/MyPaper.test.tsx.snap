@@ -6,7 +6,7 @@ exports[`Basic Usage Snapshot 1`] = `
     class="MuiPaper-root makeStyles-paper-30 MuiPaper-elevation1 MuiPaper-rounded"
   >
     <div>
-      MyChiled
+      MyChild
     </div>
   </div>
 </DocumentFragment>
