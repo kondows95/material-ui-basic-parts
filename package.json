@@ -47,7 +47,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "tsc -p lib-tsconfig.json",
+    "build": "tsc -p tsconfig.prod.json",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "npx eslint --fix 'src/**/*.{tsx,ts,js}'"
