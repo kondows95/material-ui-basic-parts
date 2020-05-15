@@ -13,7 +13,13 @@ const useStyles = makeStyles((theme: Theme) => ({
 interface Props {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     [key: string]: any;
+    label?: string;
     loading?: boolean;
+}
+
+interface CopyProps {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    [key: string]: any;
 }
 
 const SubmitButton: React.FC<Props> = (props) => {
@@ -21,18 +27,18 @@ const SubmitButton: React.FC<Props> = (props) => {
     const { formatMessage } = useIntl();
     const loading = props.loading ? true : false;
 
-    const myProp: Props = {};
+    const copyProps: CopyProps = {};
     for (const key of Object.keys(props)) {
-        if (key !== 'loading') {
-            myProp[key] = props[key];
+        if (key !== 'label' && key !== 'loading') {
+            copyProps[key] = props[key];
         }
     }
 
     return (
         <Box className={classes.item}>
             <MyButton
-                {...myProp}
-                label={formatMessage({ id: 'MUIBP.submit', defaultMessage: 'Submit' })}
+                {...copyProps}
+                label={props.label || formatMessage({ id: 'MUIBP.submit', defaultMessage: 'Submit' })}
                 loading={loading}
                 type="submit"
                 color="primary"

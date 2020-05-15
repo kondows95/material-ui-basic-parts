@@ -39,22 +39,24 @@ describe('Basic Usage', () => {
     });
 });
 
-describe('Expansion Usage', () => {
-    beforeEach(() => {
-        tLib = new TestLib(
-            (
-                <IntlProvider locale="en">
-                    <CancelButton onClick={onClick} />
-                </IntlProvider>
-            )
-        );
-    });
+it('Default label is Cancel', () => {
+    tLib = new TestLib(
+        (
+            <IntlProvider locale="en">
+                <CancelButton onClick={onClick} />
+            </IntlProvider>
+        )
+    );
+    expect(tLib.render.container.textContent).toContain('Cancel');
+});
 
-    it('If Intl messages undefined, default label is Cancel', () => {
-        expect(tLib.render.container.textContent).toContain('Cancel');
-    });
-
-    it('Snapshot', () => {
-        expect(tLib.render.asFragment()).toMatchSnapshot();
-    });
+it('You can set label', () => {
+    tLib = new TestLib(
+        (
+            <IntlProvider locale="en">
+                <CancelButton label="MyLabel" onClick={onClick} />
+            </IntlProvider>
+        )
+    );
+    expect(tLib.render.container.textContent).toContain('MyLabel');
 });

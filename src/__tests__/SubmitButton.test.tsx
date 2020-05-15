@@ -9,7 +9,7 @@ describe('Basic Usage', () => {
     beforeEach(() => {
         tLib = new TestLib(
             (
-                <IntlProvider locale="en" messages={{ 'MUIBP.submit': 'MyLabel' }}>
+                <IntlProvider locale="en" messages={{ 'MUIBP.submit': 'MySubmit' }}>
                     <SubmitButton loading={true} className="MyClass" />
                 </IntlProvider>
             )
@@ -22,8 +22,8 @@ describe('Basic Usage', () => {
         expect(elem.innerHTML).toContain('CircularProgress');
     });
 
-    it('You can set button label by Intl', () => {
-        expect(tLib.render.container.textContent).toBe('MyLabel');
+    it('You can set submit label by Intl', () => {
+        expect(tLib.get('submit-button').textContent).toBe('MySubmit');
     });
 
     it('You can add className', () => {
@@ -35,7 +35,7 @@ describe('Basic Usage', () => {
     });
 });
 
-describe('Expansion Usage', () => {
+describe('Check Default Values', () => {
     beforeEach(() => {
         tLib = new TestLib(
             (
@@ -46,17 +46,24 @@ describe('Expansion Usage', () => {
         );
     });
 
-    it('If Intl messages undefined, default label is Submit', () => {
-        expect(tLib.render.container.textContent).toContain('Submit');
+    it('Default label is Submit', () => {
+        expect(tLib.get('submit-button').textContent).toContain('Submit');
     });
 
-    it('If loading undefined, disabled is false', () => {
+    it('Button is enable', () => {
         const elem = tLib.get('submit-button') as HTMLButtonElement;
         expect(elem.disabled).toBeFalsy();
         expect(elem.innerHTML).not.toContain('CircularProgress');
     });
+});
 
-    it('Snapshot', () => {
-        expect(tLib.render.asFragment()).toMatchSnapshot();
-    });
+it('You can set label', () => {
+    tLib = new TestLib(
+        (
+            <IntlProvider locale="en">
+                <SubmitButton label="MyLabel" />
+            </IntlProvider>
+        )
+    );
+    expect(tLib.get('submit-button').textContent).toContain('MyLabel');
 });

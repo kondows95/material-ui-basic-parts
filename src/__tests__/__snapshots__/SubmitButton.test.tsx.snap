@@ -15,7 +15,7 @@ exports[`Basic Usage Snapshot 1`] = `
       <span
         class="MuiButton-label"
       >
-        MyLabel
+        MySubmit
         <div
           class="MuiCircularProgress-root makeStyles-progress-152 MuiCircularProgress-colorPrimary MuiCircularProgress-indeterminate"
           role="progressbar"
@@ -36,6 +36,30 @@ exports[`Basic Usage Snapshot 1`] = `
           </svg>
         </div>
       </span>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Expansion Usage (set  Snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root MuiBox-root-294 makeStyles-item-292"
+  >
+    <button
+      class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-fullWidth"
+      data-testid="submit-button"
+      tabindex="0"
+      type="submit"
+    >
+      <span
+        class="MuiButton-label"
+      >
+        Submit
+      </span>
+      <span
+        class="MuiTouchRipple-root"
+      />
     </button>
   </div>
 </DocumentFragment>
@@ -64,3 +88,31 @@ exports[`Expansion Usage Snapshot 1`] = `
   </div>
 </DocumentFragment>
 `;
+
+exports[`Expansion Usage Snapshot 2`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root MuiBox-root-435 makeStyles-item-433"
+  >
+    <button
+      class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-fullWidth"
+      data-testid="submit-button"
+      tabindex="0"
+      type="submit"
+    >
+      <span
+        class="MuiButton-label"
+      >
+        Submit
+      </span>
+      <span
+        class="MuiTouchRipple-root"
+      />
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Label Snapshot 1`] = `<DocumentFragment />`;
+
+exports[`Ye Snapshot 1`] = `<DocumentFragment />`;
