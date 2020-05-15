@@ -7,7 +7,6 @@
     "url": "https://github.com/kondows95/material-ui-basic-parts.gits"
   },
   "description": "Basic web components using Material-UI.",
-  "dependencies": {},
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
