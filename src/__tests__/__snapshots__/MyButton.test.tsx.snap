@@ -3,7 +3,7 @@
 exports[`Basic Usage Snapshot 1`] = `
 <DocumentFragment>
   <button
-    class="MuiButtonBase-root MuiButton-root MuiButton-contained MyClass Mui-disabled MuiButton-fullWidth Mui-disabled"
+    class="MuiButtonBase-root MuiButton-root MuiButton-contained myClass Mui-disabled MuiButton-fullWidth Mui-disabled"
     data-testid="myBtn"
     disabled=""
     tabindex="-1"

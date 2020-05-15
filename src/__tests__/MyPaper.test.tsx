@@ -18,7 +18,7 @@ describe('Basic Usage', () => {
         tLib.get('myPaper');
     });
 
-    it('You can add chiled component', () => {
+    it('You can add child component', () => {
         expect(tLib.render.container.textContent).toBe('MyChild');
     });
 

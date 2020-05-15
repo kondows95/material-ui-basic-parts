@@ -8,7 +8,7 @@ let tLib: TestLib;
 describe('Basic Usage', () => {
     beforeEach(() => {
         tLib = new TestLib(
-            <MyButton label="MyLabel" icon={<OpenInNewIcon />} loading={true} className="MyClass" data-testid="myBtn" />
+            <MyButton label="MyLabel" icon={<OpenInNewIcon />} loading={true} className="myClass" data-testid="myBtn" />
         );
     });
 
@@ -27,7 +27,7 @@ describe('Basic Usage', () => {
     });
 
     it('You can add className', () => {
-        expect(tLib.get('myBtn').getAttribute('class')).toContain('MyClass');
+        expect(tLib.get('myBtn').getAttribute('class')).toContain('myClass');
     });
 
     it('You can set button label', () => {
