@@ -1,52 +1,63 @@
 import React from 'react';
-import { Box, Dialog, DialogActions, DialogTitle, Theme } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { Dialog, DialogActions, DialogTitle } from '@material-ui/core';
 import { useIntl } from 'react-intl';
-import { getButtonLoadingStyle, getConfirmDialogStyle } from './styles';
 import MyButton from './MyButton';
 
-const useStyles = makeStyles((theme: Theme) => ({
-    progress: getButtonLoadingStyle(),
-    dialog: getConfirmDialogStyle(theme),
-}));
-
+const ignoreKeys = ['open', 'onConfirmed', 'onClose'];
 interface Props {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    [key: string]: any;
     open: boolean;
     onConfirmed: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
     onClose: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
+interface CopyProps {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    [key: string]: any;
+}
+
 const ConfirmDialog: React.FC<Props> = (props) => {
-    const classes = useStyles();
     const { formatMessage } = useIntl();
 
+    const copyProps: CopyProps = {};
+    for (const key of Object.keys(props)) {
+        if (ignoreKeys.indexOf(key) === -1) {
+            copyProps[key] = props[key];
+        }
+    }
+
+    const msgId = 'MUBP.ConfirmDialog';
+    const msgIdTitle = msgId + 'Title';
+    const msgIdCancel = msgId + 'Cancel';
+    const msgIdOk = msgId + 'Ok';
     return (
-        <Box className={classes.dialog}>
-            <Dialog
-                open={props.open}
-                onClose={props.onClose}
-                aria-labelledby="alert-dialog-title"
-                aria-describedby="alert-dialog-description"
-            >
-                <DialogTitle id="alert-dialog-title" data-testid="alert-dialog-title">
-                    {formatMessage({ id: 'MUIBP.confirmDialogMessage', defaultMessage: 'Are you sure?' })}
-                </DialogTitle>
-                <DialogActions>
-                    <MyButton
-                        label={formatMessage({ id: 'MUIBP.cancel', defaultMessage: 'Cancel' })}
-                        onClick={props.onClose}
-                        data-testid="confirm-cancel"
-                    />
-                    <MyButton
-                        label={formatMessage({ id: 'MUIBP.ok', defaultMessage: 'OK' })}
-                        onClick={props.onConfirmed}
-                        data-testid="confirm-ok"
-                        color="primary"
-                        autoFocus
-                    />
-                </DialogActions>
-            </Dialog>
-        </Box>
+        <Dialog
+            {...copyProps}
+            open={props.open}
+            onClose={props.onClose}
+            aria-labelledby="alert-dialog-title"
+            aria-describedby="alert-dialog-description"
+            data-testid={msgId}
+        >
+            <DialogTitle id="alert-dialog-title" data-testid={msgIdTitle}>
+                {formatMessage({ id: msgIdTitle, defaultMessage: 'Are you sure?' })}
+            </DialogTitle>
+            <DialogActions>
+                <MyButton
+                    label={formatMessage({ id: msgIdCancel, defaultMessage: 'Cancel' })}
+                    onClick={props.onClose}
+                    data-testid={msgIdCancel}
+                />
+                <MyButton
+                    label={formatMessage({ id: msgIdOk, defaultMessage: 'OK' })}
+                    onClick={props.onConfirmed}
+                    color="primary"
+                    autoFocus
+                    data-testid={msgIdOk}
+                />
+            </DialogActions>
+        </Dialog>
     );
 };
 export default ConfirmDialog;

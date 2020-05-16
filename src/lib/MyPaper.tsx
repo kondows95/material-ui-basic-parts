@@ -20,7 +20,7 @@ const MyPaper: React.FC<PropsWithChildren<Props>> = (props) => {
 
     const copyProps: Props = {};
     for (const key of Object.keys(props)) {
-        if (key != 'children') {
+        if (key !== 'children') {
             copyProps[key] = props[key];
         }
     }

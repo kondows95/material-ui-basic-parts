@@ -20,9 +20,9 @@ beforeEach(() => {
 
 describe('Basic Usage', () => {
     const langMessages = {
-        'MUIBP.ok': 'MyOK',
-        'MUIBP.cancel': 'MyCancel',
-        'MUIBP.confirmDialogMessage': 'You can set message!',
+        'MUBP.ConfirmDialogOk': '#MUBP.ConfirmDialogOk',
+        'MUBP.ConfirmDialogCancel': '#MUBP.ConfirmDialogCancel',
+        'MUBP.ConfirmDialogTitle': '#MUBP.ConfirmDialogTitle',
     };
     beforeEach(() => {
         tLib = new TestLib(
@@ -35,42 +35,54 @@ describe('Basic Usage', () => {
     });
 
     it('You can handle onClose', () => {
-        tLib.click('confirm-cancel');
+        tLib.click('MUBP.ConfirmDialogCancel');
         expect(handleClose).toHaveBeenCalled();
         expect(open).toBeFalsy();
     });
 
     it('You can handle onConfirmed', () => {
-        tLib.click('confirm-ok');
+        tLib.click('MUBP.ConfirmDialogOk');
         expect(handleConfirmed).toHaveBeenCalled();
         expect(open).toBeFalsy();
     });
 
     it('You can set lables by Intl', () => {
-        expect(tLib.get('confirm-ok').textContent).toBe('MyOK');
-        expect(tLib.get('confirm-cancel').textContent).toBe('MyCancel');
-        expect(tLib.get('alert-dialog-title').textContent).toBe('You can set message!');
-    });
-});
-
-describe('Expansion Usage 1', () => {
-    beforeEach(() => {
-        tLib = new TestLib(
-            (
-                <IntlProvider locale="en">
-                    <ConfirmDialog open={open} onConfirmed={handleConfirmed} onClose={handleClose} />
-                </IntlProvider>
-            )
-        );
-    });
-
-    it('If Intl messages undefined', () => {
-        expect(tLib.get('confirm-ok').textContent).toBe('OK');
-        expect(tLib.get('confirm-cancel').textContent).toBe('Cancel');
-        expect(tLib.get('alert-dialog-title').textContent).toBe('Are you sure?');
+        expect(tLib.get('MUBP.ConfirmDialogOk').textContent).toBe('#MUBP.ConfirmDialogOk');
+        expect(tLib.get('MUBP.ConfirmDialogCancel').textContent).toBe('#MUBP.ConfirmDialogCancel');
+        expect(tLib.get('MUBP.ConfirmDialogTitle').textContent).toBe('#MUBP.ConfirmDialogTitle');
     });
 
     it('Snapshot', () => {
         expect(tLib.render.asFragment()).toMatchSnapshot();
     });
+});
+
+it('Default Intl Messages', () => {
+    tLib = new TestLib(
+        (
+            <IntlProvider locale="en">
+                <ConfirmDialog open={true} onConfirmed={handleConfirmed} onClose={handleClose} />
+            </IntlProvider>
+        )
+    );
+    expect(tLib.get('MUBP.ConfirmDialogOk').textContent).toBe('OK');
+    expect(tLib.get('MUBP.ConfirmDialogCancel').textContent).toBe('Cancel');
+    expect(tLib.get('MUBP.ConfirmDialogTitle').textContent).toBe('Are you sure?');
+});
+
+it('You can set dialog size', () => {
+    //See official documents for Material-UI <Dialog> for details.
+    tLib = new TestLib(
+        (
+            <IntlProvider locale="en">
+                <ConfirmDialog
+                    open={true}
+                    onConfirmed={handleConfirmed}
+                    onClose={handleClose}
+                    fullWidth={true}
+                    maxWidth="xs"
+                />
+            </IntlProvider>
+        )
+    );
 });

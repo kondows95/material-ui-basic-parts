@@ -14,7 +14,7 @@ describe('Basic Usage', () => {
     beforeEach(() => {
         tLib = new TestLib(
             (
-                <IntlProvider locale="en" messages={{ 'MUIBP.cancel': 'MyLabel' }}>
+                <IntlProvider locale="en" messages={{ 'MUBP.CancelButton': 'MyLabel' }}>
                     <CancelButton onClick={onClick} className="MyClass" />
                 </IntlProvider>
             )
@@ -26,12 +26,12 @@ describe('Basic Usage', () => {
     });
 
     it('You can add onClick event', () => {
-        tLib.click('cancel-button');
+        tLib.click('MUBP.CancelButton');
         expect(onClick).toHaveBeenCalled();
     });
 
     it('You can add className', () => {
-        expect(tLib.get('cancel-button').getAttribute('class')).toContain('MyClass');
+        expect(tLib.get('MUBP.CancelButton').getAttribute('class')).toContain('MyClass');
     });
 
     it('Snapshot', () => {

@@ -34,15 +34,3 @@ export const getLeftButtonStyle = (theme: Theme): any => {
         },
     };
 };
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const getConfirmDialogStyle = (theme: Theme): any => {
-    return {
-        [theme.breakpoints.down('xs')]: {
-            padding: theme.spacing(1, 0, 1), //TXL
-        },
-        [theme.breakpoints.up('sm')]: {
-            padding: theme.spacing(2, 0, 1, 1), //TRBL
-        },
-    };
-};

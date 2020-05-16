@@ -6,13 +6,19 @@ import { Breadcrumbs, CancelButton, ConfirmDialog, MyButton, MyPaper, SubmitButt
 import { OpenInNew as OpenInNewIcon } from '@material-ui/icons';
 
 const msgs = {
-    'MUIBP.ok': 'MyOK',
-    'MUIBP.cancel': 'MyCancel',
-    'MUIBP.confirmDialogMessage': 'You can set message!',
+    'MUBP.Breadcrumbs': '#MUBP.Breadcrumbs',
+    'MUBP.ConfirmDialog': '#MUBP.ConfirmDialog',
+    'MUBP.ConfirmDialogCancel': '#MUBP.ConfirmDialogCancel',
+    'MUBP.ConfirmDialogOk': '#MUBP.ConfirmDialogOk',
+    'MUBP.SubmitButton': '#MUBP.SubmitButton',
+    'MUBP.CancelButton': '#MUBP.CancelButton',
+    home: '#home',
+    category1: '#category1',
+    article1: '#article1',
 };
 
 function App(): React.ReactElement {
-    const [openDialog, setOpenDialog] = useState(false);
+    const [openDialog, setOpenDialog] = useState(true);
     const handleClose = (): void => {
         setOpenDialog(false);
     };
@@ -37,7 +43,7 @@ function App(): React.ReactElement {
                 loading={openDialog}
                 onClick={(): void => setOpenDialog(true)}
             />
-            <ConfirmDialog open={openDialog} onConfirmed={handleClose} onClose={handleClose} />
+            <ConfirmDialog fullWidth={true} open={openDialog} onConfirmed={handleClose} onClose={handleClose} />
         </IntlProvider>
     );
 }

@@ -34,16 +34,17 @@ const SubmitButton: React.FC<Props> = (props) => {
         }
     }
 
+    const msgId = 'MUBP.SubmitButton';
     return (
         <Box className={classes.item}>
             <MyButton
                 {...copyProps}
-                label={props.label || formatMessage({ id: 'MUIBP.submit', defaultMessage: 'Submit' })}
+                label={props.label || formatMessage({ id: msgId, defaultMessage: 'Submit' })}
                 loading={loading}
                 type="submit"
                 color="primary"
                 fullWidth
-                data-testid="submit-button"
+                data-testid={msgId}
             />
         </Box>
     );

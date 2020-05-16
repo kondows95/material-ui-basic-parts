@@ -30,25 +30,21 @@ const MyBreadcrumbs: React.FC<Props> = (props) => {
         </Box>
     );
 
+    const msgId = 'MUBP.Breadcrumbs';
     return (
-        <Box m={2}>
+        <Box m={2} data-testid={msgId}>
             <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb">
                 {props.links.map((obj, idx) => {
-                    const label = formatMessage({ id: obj.intlID, defaultMessage: obj.intlID });
+                    const label = formatMessage({ id: obj.intlID });
                     if (obj.href) {
                         return (
-                            <Link
-                                data-testid={'breadcrumb' + idx}
-                                key={idx}
-                                color="inherit"
-                                onClick={handleClick(obj.href)}
-                            >
+                            <Link data-testid={msgId + idx} key={idx} color="inherit" onClick={handleClick(obj.href)}>
                                 <MyBox>{label}</MyBox>
                             </Link>
                         );
                     } else {
                         return (
-                            <MyBox data-testid={'breadcrumb' + idx} key={idx} color="text.primary">
+                            <MyBox data-testid={msgId + idx} key={idx} color="text.primary">
                                 {label}
                             </MyBox>
                         );

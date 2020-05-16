@@ -31,14 +31,15 @@ const CancelButton: React.FC<Props> = (props) => {
         }
     }
 
+    const msgId = 'MUBP.CancelButton';
     return (
         <Box className={classes.item}>
             <MyButton
                 {...copyProps}
-                label={props.label || formatMessage({ id: 'MUIBP.cancel', defaultMessage: 'Cancel' })}
+                label={props.label || formatMessage({ id: msgId, defaultMessage: 'Cancel' })}
                 variant="contained"
                 fullWidth
-                data-testid="cancel-button"
+                data-testid={msgId}
             />
         </Box>
     );
