@@ -7,7 +7,7 @@ describe('Basic Usage', () => {
     beforeEach(() => {
         tLib = new TestLib(
             (
-                <MyPaper data-testid="myPaper">
+                <MyPaper data-testid="myId">
                     <div>MyChild</div>
                 </MyPaper>
             )
@@ -15,7 +15,7 @@ describe('Basic Usage', () => {
     });
 
     it('You can add data-testid', () => {
-        tLib.get('myPaper');
+        tLib.get('myId');
     });
 
     it('You can add child component', () => {

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import { IntlProvider } from 'react-intl';
 import { BrowserRouter } from 'react-router-dom';
-import { Breadcrumbs, CancelButton, ConfirmDialog, MyButton, MyPaper, SubmitButton, ToolbarSpacer } from './lib/index';
+import { Breadcrumbs, ConfirmDialog, MyButton, MyPaper, ToolbarSpacer } from './lib/index';
 import { OpenInNew as OpenInNewIcon } from '@material-ui/icons';
 
 const msgs = {
@@ -10,21 +10,20 @@ const msgs = {
     'MUBP.ConfirmDialog': '#MUBP.ConfirmDialog',
     'MUBP.ConfirmDialogCancel': '#MUBP.ConfirmDialogCancel',
     'MUBP.ConfirmDialogOk': '#MUBP.ConfirmDialogOk',
-    'MUBP.SubmitButton': '#MUBP.SubmitButton',
-    'MUBP.CancelButton': '#MUBP.CancelButton',
     home: '#home',
     category1: '#category1',
     article1: '#article1',
 };
 
 function App(): React.ReactElement {
-    const [openDialog, setOpenDialog] = useState(true);
+    const [openDialog, setOpenDialog] = useState(false);
     const handleClose = (): void => {
         setOpenDialog(false);
     };
     return (
         <IntlProvider locale="en" messages={msgs}>
             <ToolbarSpacer />
+            <hr />
             <BrowserRouter>
                 <Breadcrumbs
                     links={[
@@ -34,16 +33,22 @@ function App(): React.ReactElement {
                     ]}
                 />
             </BrowserRouter>
-            <CancelButton />
-            <SubmitButton loading={openDialog} />
+            <hr />
             <MyPaper>MyPaper</MyPaper>
+            <hr />
             <MyButton
                 icon={<OpenInNewIcon />}
-                label="Open Dialog"
+                label="MyButton"
                 loading={openDialog}
-                onClick={(): void => setOpenDialog(true)}
+                onClick={(): void => console.log('onClickMyButton')}
             />
+            <hr />
             <ConfirmDialog fullWidth={true} open={openDialog} onConfirmed={handleClose} onClose={handleClose} />
+            <button onClick={(): void => setOpenDialog(true)} style={{ padding: '8px' }}>
+                Open Dialog
+            </button>
+
+            <hr />
         </IntlProvider>
     );
 }
