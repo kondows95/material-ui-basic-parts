@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import { IntlProvider } from 'react-intl';
 import { BrowserRouter } from 'react-router-dom';
-import { Breadcrumbs, ConfirmDialog, MyButton, MyPaper, ToolbarSpacer } from './lib/index';
+import { Breadcrumbs, ConfirmDialog, MyButton, MyPaper, ToolbarSpacer, SubmitButton, CancelButton } from './lib/index';
 import { OpenInNew as OpenInNewIcon } from '@material-ui/icons';
 
 const msgs = {
@@ -10,6 +10,8 @@ const msgs = {
     'MUBP.ConfirmDialog': '#MUBP.ConfirmDialog',
     'MUBP.ConfirmDialogCancel': '#MUBP.ConfirmDialogCancel',
     'MUBP.ConfirmDialogOk': '#MUBP.ConfirmDialogOk',
+    'MUBP.SubmitButton': '#MUBP.SubmitButton',
+    'MUBP.CancelButton': '#MUBP.CancelButton',
     home: '#home',
     category1: '#category1',
     article1: '#article1',
@@ -43,11 +45,20 @@ function App(): React.ReactElement {
                 onClick={(): void => console.log('onClickMyButton')}
             />
             <hr />
+            <form
+                onSubmit={(event: React.FormEvent): void => {
+                    event.preventDefault();
+                    console.log('onSubmit');
+                }}
+            >
+                <SubmitButton />
+                <CancelButton />
+            </form>
+            <hr />
             <ConfirmDialog fullWidth={true} open={openDialog} onConfirmed={handleClose} onClose={handleClose} />
             <button onClick={(): void => setOpenDialog(true)} style={{ padding: '8px' }}>
                 Open Dialog
             </button>
-
             <hr />
         </IntlProvider>
     );
