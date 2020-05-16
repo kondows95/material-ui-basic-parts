@@ -31,7 +31,7 @@ describe('Basic Usage', () => {
     });
 
     it('Snapshot', () => {
-        //sexpect(tLib.render.asFragment()).toMatchSnapshot();
+        expect(tLib.render.asFragment()).toMatchSnapshot();
     });
 });
 
