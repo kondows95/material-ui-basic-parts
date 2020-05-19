@@ -14,5 +14,18 @@ $ yarn add react react-dom @types/react @types/react-dom
 ```
 
 # Usage
-See "Basic Usage" in test.tsx.<br />
-https://github.com/kondows95/material-ui-basic-parts/tree/master/src/__test__/
+See example codes in index.tsx<br />
+https://github.com/kondows95/material-ui-basic-parts/blob/master/src/index.tsx
+
+
+You can run example codes in your local environment<br />
+```
+$ git clone https://github.com/kondows95/material-ui-basic-parts.git
+$ yarn
+$ yarn start
+```
+
+Also, you can see "Basic Usage" in "\_\_tests\_\_/***.test.tsx"<br />
+https://github.com/kondows95/material-ui-basic-parts/tree/master/src/
+
+
